@@ -15,6 +15,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "dom-to-image": "^2.6.0",
+    "element-ui": "^2.15.5",
     "fabric": "^4.5.1",
     "jquery": "^3.6.0",
     "scrollreveal": "^4.0.9",

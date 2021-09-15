@@ -22,12 +22,16 @@
       <li class="layui-nav-item"><a href="javascript:;" @click="change2canvas2svgTest">canvas2svgTest</a></li>
       <li class="layui-nav-item"><a href="javascript:;" @click="change2storeTest">storeTest</a></li>
       <li class="layui-nav-item"><a href="javascript:;" @click="change2scrollRevealTest">scrollRevealTest</a></li>
+      <li class="layui-nav-item"><a href="javascript:;" @click="change2layuiTest">layuiTest</a></li>
+      <li class="layui-nav-item"><a href="javascript:;" @click="change2css3Test">css3Test</a></li>
     </ul>
     
     <axiosTest v-if="axiosTestVisiable"></axiosTest>
     <canvas2svgTest v-if="canvas2svgTestVisiable"></canvas2svgTest>
     <storageTest v-if="storageTestVisiable"></storageTest>
     <scrollRevealTest v-if="scrollRevealTestVisiable"></scrollRevealTest>
+    <layuiTest v-if="layuiTestVisiable"></layuiTest>
+    <css3Test v-if="css3TestVisiable"></css3Test>
   </div>
 </template>
 
@@ -37,6 +41,8 @@ import storageTest from './storeTest.vue';
 import canvas2svgTest from './canvas2svgTest.vue';
 import axiosTest from './axiosTest.vue';
 import scrollRevealTest from './scrollRevealTest.vue';
+import layuiTest from './layuiTest.vue';
+import css3Test from './css3Test.vue';
 export default {
   name: 'HelloWorld',
   props: {
@@ -47,14 +53,18 @@ export default {
       axiosTestVisiable: false,
       canvas2svgTestVisiable: false,
       storageTestVisiable: false,
-      scrollRevealTestVisiable: false
+      scrollRevealTestVisiable: false,
+      layuiTestVisiable: false,
+      css3TestVisiable: false
     }
   },
   components: {
     storageTest,
     canvas2svgTest,
     axiosTest,
-    scrollRevealTest
+    scrollRevealTest,
+    layuiTest,
+    css3Test
   },
   created () {
     layui.use(['layer', 'form', 'element'], function(){
@@ -82,11 +92,21 @@ export default {
       this.setAllHide()
       this.scrollRevealTestVisiable = true
     },
+    change2layuiTest () {
+      this.setAllHide()
+      this.layuiTestVisiable = true
+    },
+    change2css3Test () {
+      this.setAllHide()
+      this.css3TestVisiable = true
+    },
     setAllHide () {
       this.axiosTestVisiable = false
       this.canvas2svgTestVisiable = false
       this.storageTestVisiable = false
       this.scrollRevealTestVisiable = false
+      this.layuiTestVisiable = false,
+      this.css3TestVisiable = false
     }
   }
 };

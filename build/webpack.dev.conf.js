@@ -43,12 +43,11 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     watchOptions: {
       poll: config.dev.poll,
     },
-    proxy: {//配置代理，因为我是前后台分离的，所以在调试的时候需要这个代理的配置才能向后台取数据
-        '/apiBaidu': {//代理所有的url请求
-            target: 'https://www.baidu.com/'//代理的地址，我的tomcat配置的端口是7001，如果你们配的不是那就需要修改这里了
+    proxy: {
+        '/apiBaidu': {
+            target: 'https://www.baidu.com/'
         },
         '/api': {
-            // 此处的写法，目的是为了 将 /api 替换成 https://www.baidu.com/
             target: 'http://127.0.0.1:7001',
             // 允许跨域
             changeOrigin: true,
